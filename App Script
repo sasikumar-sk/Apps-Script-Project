@@ -1,0 +1,40 @@
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const params = e.parameter;
+
+  const row = [
+    params.employeeName,
+    params.employeeId,
+    params.employeeEmail,
+    params.date,
+    params.project,
+    params.testcaseCreationTarget,
+    params.testcaseCreationActual,
+    params.testcaseUpdationTarget,
+    params.testcaseUpdationActual,
+    params.testcaseExecutionTarget,
+    params.testcaseExecutionActual,
+    params.defectsFoundTarget,
+    params.defectsFoundActual,
+    params.issueVerificationTarget,
+    params.issueVerificationActual,
+    params.testscriptCreationTarget,
+    params.testscriptCreationActual,
+    params.testscriptExecutionTarget,
+    params.testscriptExecutionActual,
+    params.productionTarget,
+    params.productionActual,
+    params.attendanceTarget,
+    params.attendanceActual,
+    params.qualityTarget,
+    params.qualityActual,
+    params.skillTarget,
+    params.skillActual,
+    params.newInitiativesTarget,
+    params.newInitiativesActual
+  ];
+
+  sheet.appendRow(row);
+
+  return ContentService.createTextOutput('Success');
+}
